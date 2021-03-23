@@ -9,7 +9,7 @@ class PerguntaApp extends StatelessWidget {
   final perguntaSelecionada = 0;
 
   void responder(){
-    perguntaSelecionada++;
+    //perguntaSelecionada++;
     print(perguntaSelecionada);
   }
 
