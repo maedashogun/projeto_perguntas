@@ -6,15 +6,15 @@ void main() {
   runApp(PerguntaApp());
 }
 
-class PerguntaAppState extends State<PerguntaApp> {
+class _PerguntaAppState extends State<PerguntaApp> {
   
-  var perguntaSelecionada = 0;
+  var _perguntaSelecionada = 0;
 
-  void responder(){
+  void _responder(){
     setState(() {
-      perguntaSelecionada++;
+      _perguntaSelecionada++;
     });
-    print(perguntaSelecionada);
+    print(_perguntaSelecionada);
   }
 
   @override
@@ -34,10 +34,10 @@ class PerguntaAppState extends State<PerguntaApp> {
         ),
         body: Column(
           children: [
-            Questao(perguntas[perguntaSelecionada]),
-            Questao('Resposta 1'),
-            Questao('Resposta 2'),
-            Questao('Resposta 3'),
+            Questao(perguntas[_perguntaSelecionada]),
+            Resposta('Resposta 1',_responder),
+            Resposta('Resposta 2',_responder),
+            Resposta('Resposta 3',_responder),
           ],
         ),
       ),
@@ -47,7 +47,7 @@ class PerguntaAppState extends State<PerguntaApp> {
 }
 
 class PerguntaApp extends StatefulWidget {
-  PerguntaAppState createState() {  
-    return PerguntaAppState();
+  _PerguntaAppState createState() {  
+    return _PerguntaAppState();
   }
 }
